@@ -34,7 +34,7 @@ Route::get('/sumar/{numero1}/{numero2}/{numero3?}', function($numero1, $numero2,
   return $numero1 + $numero2 + $numero3;
 });
 
-Route::get('/peliculas', function(){
+/*Route::get('/peliculas', function(){
   $peliculas = [
     0 =>[
       "titulo" => "Star Wars",
@@ -43,11 +43,11 @@ Route::get('/peliculas', function(){
     /*1 =>['Super 8', 8],
     2 =>['Harry Potter', 8],
     3 =>['Amelie', 8],
-    4 =>['Eterno Resplandor',9]*/
+    4 =>['Eterno Resplandor',9]
   ];
   return  view('peliculas', compact('peliculas'));
-});
-
+});*/
+Route::get('/peliculas', 'MoviesController@todosLasPeliculas');
 
 Route::get('/actors', 'ActorController@directory');
 
@@ -56,6 +56,14 @@ Route::get('/actors', 'ActorController@todosLosActores');
 Route::get('/actor/{id}', 'ActorController@show');
 
 Route::get('/actors/buscar', 'ActorController@search');
+
+Route::get('/actors/add', 'ActorController@create');
+
+Route::post('/actors/add', 'ActorController@store');
+
+
+
+
 
 
 /*'Star Wars', 'Super 8', 'Harry Potter', 'Amelie', 'Eterno Resplandor'*/

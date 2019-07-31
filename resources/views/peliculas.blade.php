@@ -7,15 +7,15 @@
   <body>
     <h2>Peliculas</h2>
     <ul>
-    
+
  </ul>
 
  <ul>
-   @if (empty($peliculas))
+   @if (empty($movies))
      <li>No hay peliculas</li>
    @else
-     @foreach ($peliculas as $posicion=>$pelicula)
-     <li>Titulo: {{ $pelicula["titulo"] }}//// Rating:{{ $pelicula["rating"] }}</li>
+     @foreach ($movies as $movie)
+     <li>Titulo: {{ $movie->title }}</li>
      @endforeach
  @endif
 </ul>
